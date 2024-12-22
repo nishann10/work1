@@ -1,0 +1,33 @@
+<!-- soft_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Details</title>
+    <link rel="stylesheet" href="{% static 'css/soft_get.css' %}">
+</head>
+<body>
+    <div class="container">
+        {% for soft in a %}
+            <div class="card">
+                <div class="card-header">
+                    <img src="{{ soft.photo.url }}" alt="{{ soft.firstname }} {{ soft.lastname }}" class="card-img">
+                </div>
+                <div class="card-body">
+                    <h2>{{ soft.firstname }} {{ soft.lastname }}</h2>
+                    <p><strong>Email:</strong> {{ soft.email }}</p>
+                    <p><strong>Department:</strong> {{ soft.department }}</p>
+                    <p><strong>Designation:</strong> {{ soft.disignation }}</p>
+                    <p><strong>Date of Join:</strong> {{ soft.dateofjoin }}</p>
+                    <p><strong>Salary:</strong> {{ soft.salery }}</p>
+                    <button><a href="/softupdate/{{soft.id}}">update</a></button>
+                    <button><a href="/softdelete/{{soft.id}}">delete</a></button>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <button><a href="softadd">add new</a></button>
+</body>
+</html>

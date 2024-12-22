@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="fname">first name:</label><br>
+    <input type="text" id="fname" name="first_name" value="{{a.firstname}}"><br><br>
+    <label for="fname">last name:</label><br>
+    <input type="text" id="fname" name="last_name" value="{{a.lastname}}"><br><br>
+    <label for="fname">e=mail adress :</label><br>
+    <input type="text" id="fname" name="e_mail" value="{{a.email}}"><br><br>
+    <label for="fname">department:</label><br>
+    <input type="text" id="fname" name="de_partment" value="{{a.department}}"><br><br>
+    <label for="fname">disignation:</label><br>
+    <input type="text" id="fname" name="de_signation" value="{{a.disignation}}"><br><br>
+    <label for="fname">date of join:</label><br>
+    <input type="date" id="fname" name="date_ofjoin" value="{{a.dateofjoin|date:'Y-m-d'}}"><br><br>
+    <label for="fname">salery:</label><br>
+    <input type="text" id="fname" name="sa_lery" value="{{a.salery}}"><br><br>
+    <label for="fname">photo:</label><br>
+    <input type="file" id="fname" name="ph_to" value="{{a.photo}}"><br><br>
+    <button type="submit">submit</button>
+    </form>
+</body>
+</html>
